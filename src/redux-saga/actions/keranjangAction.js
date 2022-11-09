@@ -12,14 +12,28 @@ export const GetKeranjangFailed = (payload) => ({
   payload,
 });
 
-export const TotalKeranjangRequest = () => ({
-  type: ActionType.TOTAL_KERANJANG_REQUEST,
-});
-export const TotalKeranjangSuccess = (payload) => ({
-  type: ActionType.TOTAL_KERANJANG_SUCCESS,
+export const GetOneKeranjangRequest = (payload) => ({
+  type: ActionType.GET_ONE_KERANJANG_REQUEST,
   payload,
 });
-export const TotalKeranjangFailed = (payload) => ({
-  type: ActionType.TOTAL_KERANJANG_FAILED,
+export const GetOneKeranjangSuccess = (payload) => ({
+  type: ActionType.GET_ONE_KERANJANG_SUCCESS,
+  payload,
+});
+export const GetOneKeranjangFailed = (payload) => ({
+  type: ActionType.GET_ONE_KERANJANG_FAILED,
+  payload,
+});
+
+export const EditKeranjangRequest = (payload) => ({
+  type: ActionType.EDIT_KERANJANG_REQUEST,
+  payload,
+});
+export const EditKeranjangSuccess = (payload) => ({
+  type: ActionType.EDIT_KERANJANG_SUCCESS,
+  payload,
+});
+export const EditKeranjangFailed = (payload) => ({
+  type: ActionType.EDIT_KERANJANG_FAILED,
   payload,
 });

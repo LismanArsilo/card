@@ -2,6 +2,10 @@ import { call, put } from "redux-saga/effects";
 import {
   GetKeranjangFailed,
   GetKeranjangSuccess,
+  EditKeranjangSuccess,
+  EditKeranjangFailed,
+  GetOneKeranjangSuccess,
+  GetOneKeranjangFailed,
 } from "../actions/keranjangAction";
 const lists = [
   {
@@ -30,6 +34,14 @@ const lists = [
   },
 ];
 
+function* handleGetOneKeranjang(action) {
+  const { payload } = action;
+  try {
+    yield put(GetOneKeranjangSuccess(payload));
+  } catch (error) {
+    yield put(GetOneKeranjangFailed(error));
+  }
+}
 function* handleGetKeranjang() {
   try {
     yield put(GetKeranjangSuccess(lists));
@@ -38,4 +50,13 @@ function* handleGetKeranjang() {
   }
 }
 
-export { handleGetKeranjang };
+function* handleEditKeranjang(action) {
+  const { payload } = action;
+  try {
+    yield put(EditKeranjangSuccess(payload));
+  } catch (error) {
+    yield put(EditKeranjangFailed(error));
+  }
+}
+
+export { handleGetKeranjang, handleEditKeranjang, handleGetOneKeranjang };

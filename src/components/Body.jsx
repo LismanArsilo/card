@@ -12,6 +12,7 @@ export default function Body() {
   useEffect(() => {
     dispatch(GetKeranjangRequest());
   }, []);
+
   return (
     <div className="flex flex-row gap-6 mt-10 mx-20">
       <div className="basis-8/12 flex flex-col p-3 border border-slate-300 rounded-lg shadow-2xl">
